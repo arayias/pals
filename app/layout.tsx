@@ -21,7 +21,7 @@ export default function RootLayout({
         className={`${inter.className} grid grid-rows-[auto,1fr] min-h-screen`}
       >
         <NavMenu />
-        {children}
+        <div className="mt-3 mx-auto w-4/6">{children}</div>
       </body>
     </html>
   );
