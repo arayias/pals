@@ -1,3 +1,4 @@
+import { SignInButton } from "@/components/buttons";
 import Link from "next/link";
 
 export default function NavMenu() {
@@ -15,6 +16,9 @@ export default function NavMenu() {
         </li>
         <li className="hover:text-gray-300 transition-colors">
           <Link href={"/users"}>Users</Link>
+        </li>
+        <li>
+          <SignInButton />
         </li>
       </ul>
     </nav>
