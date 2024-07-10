@@ -1,4 +1,4 @@
-import { SignInButton } from "@/components/buttons";
+import { UserMenu } from "@/components/UserMenu";
 import Link from "next/link";
 
 export default function NavMenu() {
@@ -18,7 +18,7 @@ export default function NavMenu() {
           <Link href={"/users"}>Users</Link>
         </li>
         <li>
-          <SignInButton />
+          <UserMenu />
         </li>
       </ul>
     </nav>
