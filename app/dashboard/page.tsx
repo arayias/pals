@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth";
 import ProfileForm from "./ProfileForm";
 import { prisma } from "@/lib/prisma";
-import { authOptions } from "../api/auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
 export default async function Dashboard() {
