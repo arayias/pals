@@ -18,7 +18,7 @@ import Link from "next/link";
 export function UserMenu() {
   const { data: session, status } = useSession();
   if (status === "loading") {
-    return <>...</>;
+    return <Button className="w-[43px] h-[43px]">Loading...</Button>;
   }
   if (status === "authenticated") {
     return (

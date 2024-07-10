@@ -19,11 +19,13 @@ export default function RootLayout({
   return (
     <AuthProvider>
       <html lang="en">
-        <body
-          className={`${inter.className} grid grid-rows-[auto,1fr] min-h-screen`}
-        >
+        <body className={`${inter.className} min-h-screen`}>
           <NavMenu />
-          <div className="mt-3 mx-auto w-4/6">{children}</div>
+          <div className="w-4/6 mx-auto">
+            <div className="grid grid-rows-[auto,1fr] mt-3">
+              {children}
+            </div>
+          </div>
         </body>
       </html>
     </AuthProvider>
