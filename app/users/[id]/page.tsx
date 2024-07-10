@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import SkeletonLoadingUser from "./loading";
+import FollowClient from "@/components/FollowClient";
+import FollowButton from "@/components/FollowButton";
 
 type Props = {
   params: {
@@ -30,6 +32,7 @@ export default async function User({ params }: Props) {
 
       <h2>Bio</h2>
       <p>{bio || "This user hasn't written a bio yet. Check back later!"}</p>
+      <FollowButton targetUserId={params.id} />
     </div>
   );
 }
