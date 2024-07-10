@@ -3,7 +3,7 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { LogOut, User } from "lucide-react";
+import { LogOut, User, UserPen } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -18,21 +18,19 @@ import Link from "next/link";
 export function UserMenu() {
   const { data: session, status } = useSession();
   if (status === "loading") {
-    return <Button className="w-[43px] h-[43px]">Loading...</Button>;
+    return <Button className="w-[32px] h-[32px]">Loading...</Button>;
   }
   if (status === "authenticated") {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button className="dark">
-            <Image
-              src={session.user?.image ?? "/mememan.webp"}
-              width={32}
-              height={32}
-              alt={session.user?.name ?? "User Avatar"}
-              className="rounded-full"
-            />
-          </Button>
+          <Image
+            src={session.user?.image ?? "/mememan.webp"}
+            width={32}
+            height={32}
+            alt={session.user?.name ?? "User Avatar"}
+            className="rounded-full cursor-pointer dark select-none"
+          />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56 dark">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -43,6 +41,16 @@ export function UserMenu() {
                 <div className="flex flex-row items-center">
                   <User className="mr-2 h-4 w-4" />
                   Profile
+                </div>
+              </DropdownMenuItem>
+            </Link>
+          </DropdownMenuGroup>
+          <DropdownMenuGroup>
+            <Link href={`/dashboard`}>
+              <DropdownMenuItem>
+                <div className="flex flex-row items-center">
+                  <UserPen className="mr-2 h-4 w-4" />
+                  Dashboard
                 </div>
               </DropdownMenuItem>
             </Link>

@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import SkeletonLoadingUser from "./loading";
 
 type Props = {
   params: {
@@ -18,10 +19,13 @@ export default async function User({ params }: Props) {
     <div>
       <h1>{name}</h1>
       {image ? (
-        <img
-          src={image}
-          alt={name ? `${name}'s Profile Image` : "Profile Image"}
-        />
+        <div className="w-[50%]">
+          <img
+            className="w-full h-auto"
+            src={image}
+            alt={name ? `${name}'s Profile Image` : "Profile Image"}
+          />
+        </div>
       ) : null}
 
       <h2>Bio</h2>
