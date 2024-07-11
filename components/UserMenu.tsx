@@ -14,11 +14,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
+import { Skeleton } from "./ui/skeleton";
 
 export function UserMenu() {
   const { data: session, status } = useSession();
   if (status === "loading") {
-    return <Button className="w-[32px] h-[32px]">Loading...</Button>;
+    return <Skeleton className="w-[32px] h-[32px] rounded-full" />;
   }
   if (status === "authenticated") {
     return (
