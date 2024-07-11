@@ -1,6 +1,4 @@
 import { prisma } from "@/lib/prisma";
-import SkeletonLoadingUser from "./loading";
-import FollowClient from "@/components/FollowClient";
 import FollowButton from "@/components/FollowButton";
 
 type Props = {

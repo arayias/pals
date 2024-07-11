@@ -1,8 +1,4 @@
-type Post = {
-  title: string;
-  content: string;
-  slug: string;
-};
+import { prisma } from "@/lib/prisma";
 
 type Props = {
   params: {
@@ -11,14 +7,19 @@ type Props = {
 };
 
 export default async function BlogPost({ params }: Props) {
-  const posts: Post[] = await (
-    await fetch("http://localhost:3000/api/content")
-  ).json();
-  const post = posts.find((post) => post.slug === params.slug)!;
+  const blog = await prisma.blog.findUnique({
+    where: {
+      id: params.slug,
+    },
+  });
+
+  if (!blog) {
+    return <div>Blog not found</div>;
+  }
   return (
     <article>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <h1>{blog.title}</h1>
+      <p>{blog.content}</p>
     </article>
   );
 }
