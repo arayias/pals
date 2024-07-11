@@ -15,14 +15,18 @@ export default function BlogCard({ params }: Props) {
   };
 
   const getReadableDate = (date: Date) => {
-    let day = date.getDate();
-    let month = date.getMonth() + 1;
-    let year = date.getFullYear();
-    let time = `${date.getHours()}:${date.getMinutes()}`;
-    if (year == new Date().getFullYear()) {
-      return `${day}/${month} at ${time}`;
+    let options: Intl.DateTimeFormatOptions = {
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+    };
+    if (date.getFullYear() != new Date().getFullYear()) {
+      options.weekday = "short";
+      options.month = "short";
+      options.year = "numeric";
     }
-    return `${day}/${month}/${year} at ${time}`;
+    return date.toLocaleDateString(undefined, options);
   };
 
   const content = truncate(params.content, 70);
