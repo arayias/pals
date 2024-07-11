@@ -9,11 +9,11 @@ export default async function Blog() {
   return (
     <>
       <Link href={"/blog/create"} className="mb-2">
-        <Button>Create Blog</Button>
+        <Button className="mb-2">Create Blog</Button>
       </Link>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {blogs.map((blog) => (
-          <BlogCard key={blog.id} {...blog} />
+          <BlogCard key={blog.id} params={blog} />
         ))}
       </div>
     </>
