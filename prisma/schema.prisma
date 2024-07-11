@@ -78,6 +78,8 @@ model Blog {
   title    String   @db.Text
   content  String   @db.Text
   authorId String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
 
   author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
 }

@@ -9,6 +9,8 @@ export async function getBlogs() {
       title: true,
       content: true,
       authorId: true,
+      createdAt: true,
+      updatedAt: true,
       author: {
         select: {
           name: true,
