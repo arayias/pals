@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { revalidatePath } from "next/cache";
 
 const formSchema = z.object({
   title: z.string().min(3).max(50),
@@ -37,6 +38,7 @@ export default function CreateBlogForm() {
       method: "POST",
       body: JSON.stringify(data),
     });
+    revalidatePath("/blog");
     redirect("/blog");
   }
 
