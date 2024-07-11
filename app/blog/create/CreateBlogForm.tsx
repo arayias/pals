@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { revalidatePath } from "next/cache";
+import { serverRevalidatePath } from "@/app/actions";
 
 const formSchema = z.object({
   title: z.string().min(3).max(50),
@@ -25,6 +25,7 @@ const formSchema = z.object({
 });
 
 export default function CreateBlogForm() {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,8 +39,8 @@ export default function CreateBlogForm() {
       method: "POST",
       body: JSON.stringify(data),
     });
-    revalidatePath("/blog");
-    redirect("/blog");
+    serverRevalidatePath("/blog");
+    router.push("/blog");
   }
 
   return (
