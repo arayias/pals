@@ -22,9 +22,7 @@ export default function RootLayout({
         <body className={`${inter.className} min-h-screen`}>
           <NavMenu />
           <div className="w-4/6 mx-auto">
-            <div className="grid grid-rows-[auto,1fr] mt-3">
-              {children}
-            </div>
+            <div className="mt-3">{children}</div>
           </div>
         </body>
       </html>

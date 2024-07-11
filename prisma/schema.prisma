@@ -53,6 +53,7 @@ model User {
   sessions      Session[]
   followedBy    Follows[] @relation("following")
   following     Follows[] @relation("follower")
+  blogs         Blog[]
 }
 
 model Follows {
@@ -70,4 +71,13 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Blog {
+  id       String   @id @default(cuid())
+  title    String   @db.Text
+  content  String   @db.Text
+  authorId String
+
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
 }
