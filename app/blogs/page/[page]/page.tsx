@@ -9,6 +9,9 @@ type Props = {
 
 export default async function BlogsPage({ params }: Props) {
   const page = parseInt(params.page);
+  if (isNaN(page) || page < 0) {
+    throw new Error("Invalid page number");
+  }
   const blogs = await getBlogs(page, 12);
 
   return (

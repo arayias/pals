@@ -22,3 +22,7 @@ export async function getBlogs(page: number, limit: number) {
     take: limit,
   });
 }
+
+export async function getBlogCount() {
+  return await prisma.blog.count();
+}

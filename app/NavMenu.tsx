@@ -13,7 +13,7 @@ export default function NavMenu() {
             <Link href={"/about"}>About</Link>
           </li>
           <li className="hover:text-gray-300 transition-colors">
-            <Link href={"/blogs"}>Blog</Link>
+            <Link href={"/blogs/page/0"}>Blog</Link>
           </li>
           <li className="hover:text-gray-300 transition-colors">
             <Link href={"/users"}>Users</Link>
