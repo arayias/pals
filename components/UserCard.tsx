@@ -20,7 +20,7 @@ export default function UserCard({ id, name, age, image }: Props) {
       <div className="p-4">
         <h1 className="text-xl font-semibold">{name || "User"}</h1>
         {age ? <p className="text-gray-500">{age} years old</p> : null}
-        <Link href={`/users/${id}`}>
+        <Link href={`/user/${id}`}>
           <span className="text-blue-500 hover:border-b-4 cursor-pointer">
             View Profile
           </span>

@@ -33,7 +33,7 @@ export default function BlogCard({ params }: Props) {
     <div className="bg-slate-100 dark:bg-gray-700 shadow-lg rounded-lg hover:bg-slate-300 dark:hover:bg-gray-800 transition duration-200 h-40 overflow-hidden">
       <div className="p-4">
         <div className="flex flex-row gap-3">
-          <Link href={`/users/${params.authorId}`}>
+          <Link href={`/user/${params.authorId}`}>
             <div className="h-14 w-14 rounded-full overflow-hidden">
               {params.author.image && (
                 <img

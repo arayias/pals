@@ -37,7 +37,7 @@ export function UserMenu() {
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <Link href={`/users/${session.user.id}`}>
+            <Link href={`/user/${session.user.id}`}>
               <DropdownMenuItem>
                 <div className="flex flex-row items-center">
                   <User className="mr-2 h-4 w-4" />
