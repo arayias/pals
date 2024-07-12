@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getBlogs } from "./actions";
 
 export default async function Blog() {
-  const blogs = await getBlogs();
+  const blogs = await getBlogs(0, 20);
 
   return (
     <>

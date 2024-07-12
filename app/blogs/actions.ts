@@ -2,8 +2,9 @@
 
 import { prisma } from "@/lib/prisma";
 
-export async function getBlogs() {
+export async function getBlogs(page: number, limit: number) {
   return await prisma.blog.findMany({
+    skip: page * limit,
     select: {
       id: true,
       title: true,
@@ -18,5 +19,6 @@ export async function getBlogs() {
         },
       },
     },
+    take: limit,
   });
 }

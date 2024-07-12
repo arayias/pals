@@ -9,7 +9,7 @@ interface Props {
 
 export default function UserCard({ id, name, age, image }: Props) {
   return (
-    <div className="bg-gray-700 shadow-lg rounded-lg w-56 h-80 hover:bg-gray-800 transition duration-200">
+    <div className="bg-gray-700 shadow-lg rounded-lg w-48 h-80 hover:bg-gray-800 transition duration-200">
       <div className="h-48 overflow-hidden rounded-tr-3xl">
         <img
           src={image || "https://via.placeholder.com/300"}
@@ -21,7 +21,7 @@ export default function UserCard({ id, name, age, image }: Props) {
         <h1 className="text-xl font-semibold">{name || "User"}</h1>
         {age ? <p className="text-gray-500">{age} years old</p> : null}
         <Link href={`/users/${id}`}>
-          <span className="text-blue-500 hover:border-b-8 cursor-pointer">
+          <span className="text-blue-500 hover:border-b-4 cursor-pointer">
             View Profile
           </span>
         </Link>

@@ -58,8 +58,10 @@ export function UserMenu() {
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={() => signOut()}>
-            <LogOut className="mr-2 h-4 w-4" />
-            <span>Log out</span>
+            <div className="flex flex-row items-center">
+              <LogOut className="mr-2 h-4 w-4" />
+              Logout
+            </div>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
