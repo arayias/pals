@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+let nextConfig = {
   experimental: {
     turbo: {
       rules: {
@@ -19,6 +19,11 @@ const nextConfig = {
       },
     ],
   },
+};
+
+nextConfig = {
+  ...nextConfig,
+  ...(process.env.NODE_ENV !== "production" && { cacheMaxMemorySize: 0 }),
 };
 
 export default nextConfig;
