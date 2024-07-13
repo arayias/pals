@@ -34,7 +34,7 @@ export default async function BlogPost({ params }: Props) {
       <div className="flex justify-between flex-col gap-2 mx-auto text-center">
         <h1 className="text-4xl font-bold">{blog.title}</h1>
         <p className="text-gray-300">
-          {blog.author.name} • {getReadableDate(blog.createdAt)}
+          {blog.author.name} {"\u2022"} {getReadableDate(blog.createdAt)}
         </p>
       </div>
       <div className="flex flex-col gap-4 mx-auto w-[80%]">
