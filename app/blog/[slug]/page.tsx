@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { getReadableDate } from "@/lib/utils";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 type Props = {
   params: {
@@ -38,7 +40,12 @@ export default async function BlogPost({ params }: Props) {
       <div className="flex flex-col gap-4 mx-auto w-[80%]">
         <hr className="border-gray-300 my-4" />
         <div>
-          <p>{blog.content}</p>
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            className="max-w-prose prose dark:prose-invert"
+          >
+            {blog.content}
+          </Markdown>
         </div>
       </div>
     </article>
