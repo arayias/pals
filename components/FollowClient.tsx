@@ -46,7 +46,7 @@ export default function FollowClient({ targetUserId, isFollowing }: Props) {
       onClick={isFollowing ? unfollow : follow}
       disabled={isFetching || isPending}
       className={`${
-        isFollowing ? "bg-red-500" : "bg-green-500"
+        isFollowing ? "bg-orange-900" : "bg-green-900"
       } text-white px-4 py-2 rounded-md`}
     >
       {isFollowing ? "Unfollow" : "Follow"}

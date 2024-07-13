@@ -1,3 +1,4 @@
+import { getReadableDate } from "@/lib/utils";
 import type { Blog } from "@prisma/client";
 import Link from "next/link";
 
@@ -12,21 +13,6 @@ type BlogWithAuthor = Blog & {
 export default function BlogCard({ params }: Props) {
   const truncate = (str: string, n: number) => {
     return str.length > n ? str.slice(0, n - 1) + "..." : str;
-  };
-
-  const getReadableDate = (date: Date) => {
-    let options: Intl.DateTimeFormatOptions = {
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "numeric",
-    };
-    if (date.getFullYear() != new Date().getFullYear()) {
-      options.weekday = "short";
-      options.month = "short";
-      options.year = "numeric";
-    }
-    return date.toLocaleDateString(undefined, options);
   };
 
   return (
