@@ -39,7 +39,7 @@ export default function CreateBlogForm() {
       method: "POST",
       body: JSON.stringify(data),
     });
-    await serverRevalidatePath("/blog");
+    await serverRevalidatePath("/blogs/page/[page]", "page");
     router.push("/blogs/page/0");
   }
 
