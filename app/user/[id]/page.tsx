@@ -29,8 +29,8 @@ export default async function User({ params }: Props) {
   const { name, bio, image } = user;
 
   return (
-    <div className="grid grid-cols-1 gap-5 p-4 max-h-screen md:grid-cols-2">
-      <div className="md:border-r md:border-gray-200 md:pr-2 md:border-opacity-50">
+    <div className="grid grid-cols-1 gap-5 p-4 md:grid-cols-2">
+      <div className="md:border-r dark:md:border-gray-200 md:border-slate-600 md:pr-2 md:border-opacity-50">
         <h1>{name}</h1>
         {image ? (
           <div className="w-[50%]">

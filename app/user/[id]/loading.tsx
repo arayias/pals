@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 function SkeletonLoadingUser() {
   return (
-    <div className="flex flex-col gap-1 md:border-r md:border-gray-200 md:pr-2 md:border-opacity-50">
+    <div className="flex flex-col gap-1 md:border-r dark:md:border-gray-200 md:border-slate-600 md:pr-2 md:border-opacity-50">
       <Skeleton className="w-[10%] h-5 " />
       <Skeleton className="w-[40%] aspect-square " />
 

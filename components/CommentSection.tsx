@@ -45,7 +45,9 @@ export default async function CommentSection({ params }: Props) {
     <div className="flex flex-col gap-4">
       <div className="text-center">
         <h2 className="text-xl font-bold">No comments yet</h2>
-        <p className="text-gray-300">Be the first to comment</p>
+        <p className="dark:text-gray-300 text-gray-950">
+          Be the first to comment
+        </p>
       </div>
       <CommentForm blogId={blogId} />
     </div>

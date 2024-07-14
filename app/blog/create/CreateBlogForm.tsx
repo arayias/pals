@@ -74,7 +74,11 @@ export default function CreateBlogForm() {
             </FormItem>
           )}
         />
-        <Button className="hover:bg-green-400" type="submit">
+        <Button
+          variant={"outline"}
+          className="hover:bg-green-400"
+          type="submit"
+        >
           Post
         </Button>
       </form>
