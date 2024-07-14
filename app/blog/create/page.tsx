@@ -1,5 +1,5 @@
 import { getServerSession } from "next-auth";
-import CreateBlogForm from "./CreateBlogForm";
+import CreateBlogForm from "@/components/CreateBlogForm";
 import { authOptions } from "@/lib/auth";
 
 export default async function BlogCreate() {

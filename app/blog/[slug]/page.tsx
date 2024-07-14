@@ -3,7 +3,6 @@ import { prisma } from "@/lib/prisma";
 import { getReadableDate } from "@/lib/utils";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Loading from "./loading";
 
 type Props = {
   params: {
@@ -12,8 +11,6 @@ type Props = {
 };
 
 export default async function BlogPost({ params }: Props) {
-  // return <Loading />;
-
   const blog = await prisma.blog.findUnique({
     where: {
       id: params.slug,
