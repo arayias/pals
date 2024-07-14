@@ -27,7 +27,7 @@ type Props = {
   blogId: string;
 };
 
-export default function CreateBlogForm({ blogId }: Props) {
+export default function CommentForm({ blogId }: Props) {
   const router = useRouter();
   const session = useSession();
   const form = useForm<z.infer<typeof formSchema>>({
