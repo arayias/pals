@@ -17,3 +17,32 @@ export async function postComment(data: { content: string; blogId: string }) {
     },
   });
 }
+
+export async function getBlog(slug: string) {
+  return await prisma.blog.findUnique({
+    where: {
+      id: slug,
+    },
+    select: {
+      title: true,
+      content: true,
+      id: true,
+    },
+  });
+}
+
+export async function editBlog(data: {
+  title: string;
+  content: string;
+  id: string;
+}) {
+  return await prisma.blog.update({
+    where: {
+      id: data.id,
+    },
+    data: {
+      title: data.title,
+      content: data.content,
+    },
+  });
+}
