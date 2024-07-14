@@ -1,4 +1,4 @@
-import { UserSection } from "../../page";
+import { UserSection } from "@/components/UserSection";
 
 type Props = {
   params: {

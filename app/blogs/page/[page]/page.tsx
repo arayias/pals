@@ -1,4 +1,4 @@
-import { BlogSection } from "../../page";
+import { BlogSection } from "@/components/BlogSection";
 
 type Props = {
   params: {
