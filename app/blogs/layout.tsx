@@ -12,7 +12,9 @@ export default async function BlogLayout({
   return (
     <>
       <Link href={"/blog/create"} className="mb-2">
-        <Button className="mb-2">Create Blog</Button>
+        <Button variant={"secondary"} className="mb-2">
+          Create Blog
+        </Button>
       </Link>
       {children}
       <Paginate

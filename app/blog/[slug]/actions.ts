@@ -36,6 +36,21 @@ export async function editBlog(data: {
   content: string;
   id: string;
 }) {
+  const session = await getServerSession(authOptions);
+  if (!session || !session.user || !session.user.id) {
+    throw new Error("You must be logged in to edit a blog");
+  }
+  const author = await prisma.blog.findUnique({
+    where: {
+      id: data.id,
+    },
+    select: {
+      authorId: true,
+    },
+  });
+  if (session.user.id !== author?.authorId) {
+    throw new Error("You can only edit your own blog");
+  }
   return await prisma.blog.update({
     where: {
       id: data.id,

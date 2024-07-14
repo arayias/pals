@@ -99,7 +99,7 @@ export default function BlogForm({ params }: BlogFormProps) {
           )}
         />
         <Button
-          variant={"outline"}
+          variant={"secondary"}
           className="hover:bg-green-400"
           type="submit"
         >
