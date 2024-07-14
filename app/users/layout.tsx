@@ -10,7 +10,9 @@ export default async function UserLayout({
   return (
     <>
       {children}
-      <Paginate params={{ totalPages: Math.ceil(userCount / 12) }} />
+      <Paginate
+        params={{ totalPages: Math.ceil(userCount / 12), baseUrl: "/users" }}
+      />
     </>
   );
 }
