@@ -40,8 +40,10 @@ export default function CommentCard({ comment, author }: Props) {
         >
           {author.name}
         </Link>
-        <div className="text-sm text-gray-300">{comment.content}</div>
-        <span className="text-xs text-gray-500 italic">
+        <div className="text-sm dark:text-gray-300 text-gray-600">
+          {comment.content}
+        </div>
+        <span className="text-xs dar:text-gray-500 text-gray-600 italic">
           {getReadableDate(comment.createdAt)}
         </span>
       </div>

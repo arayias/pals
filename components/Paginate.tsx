@@ -23,7 +23,7 @@ export default function Paginate({ params }: Props) {
 
   return (
     <Pagination className="justify-center mt-1">
-      <PaginationContent className="bg-slate-700 rounded-xl">
+      <PaginationContent className="bg-slate-300 dark:bg-slate-700 rounded-xl">
         {currentPage > 0 && (
           <PaginationItem>
             <PaginationPrevious

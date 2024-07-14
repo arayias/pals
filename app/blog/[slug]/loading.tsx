@@ -13,7 +13,7 @@ export default function Loading() {
           </div>
         </div>
         <div className="flex flex-col gap-4 mx-auto w-[80%]">
-          <hr className="border-gray-300 my-4" />
+          <hr className="dark:border-gray-300 border-gray-600 my-4" />
           <div className="flex justify-center flex-col gap-2">
             <Skeleton className="h-10 w-full" />
             <Skeleton className="h-10 w-[80%]" />
@@ -28,7 +28,7 @@ export default function Loading() {
               <Skeleton className="h-10 w-[80%]" />
             </div>
           </div>
-          <hr className="border-gray-300 my-4" />
+          <hr className="dark:border-gray-300 border-gray-600 my-4" />
           <h2 className="text-xl font-bold">Comments</h2>
           <div className="flex flex-col gap-4">
             {Array.from({ length: 3 }).map((_, i) => (

@@ -37,12 +37,12 @@ export default async function BlogPost({ params }: Props) {
     <article>
       <div className="flex justify-between flex-col gap-2 mx-auto text-center">
         <h1 className="text-4xl font-bold">{blog.title}</h1>
-        <p className="text-gray-300">
+        <p className="dark:text-gray-300 text-gray-600">
           {blog.author.name} {"\u2022"} {getReadableDate(blog.createdAt)}
         </p>
       </div>
       <div className="flex flex-col gap-4 mx-auto w-[80%]">
-        <hr className="border-gray-300 my-4" />
+        <hr className="dark:border-gray-300 border-gray-600 my-4" />
         <div>
           <Markdown
             remarkPlugins={[remarkGfm]}
@@ -52,7 +52,7 @@ export default async function BlogPost({ params }: Props) {
           </Markdown>
         </div>
         <div>
-          <hr className="border-gray-300 my-4" />
+          <hr className="dark:border-gray-300 border-gray-600 my-4" />
           <h2 className="text-xl font-bold">Comments</h2>
           <CommentSection params={params} />
         </div>

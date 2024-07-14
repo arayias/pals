@@ -16,7 +16,7 @@ export default function BlogCard({ params }: Props) {
   };
 
   return (
-    <div className="bg-slate-100 dark:bg-gray-700 shadow-lg rounded-lg hover:bg-slate-300 dark:hover:bg-gray-800 transition duration-200 h-40 overflow-hidden">
+    <div className="bg-slate-100 dark:bg-gray-700 hover:bg-slate-300 dark:hover:bg-gray-800 shadow-lg rounded-lg  transition duration-200 h-40 overflow-hidden">
       <div className="p-4">
         <div className="flex flex-row gap-3">
           <Link href={`/user/${params.authorId}`}>

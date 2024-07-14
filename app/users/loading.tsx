@@ -2,12 +2,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function UserSkeleton() {
   return (
-    <div className="bg-gray-700 shadow-lg rounded-lg w-48 h-80">
-      <Skeleton className="h-48 rounded-tr-3xl bg-gray-500" />
+    <div className="shadow-lg rounded-lg w-48 h-80">
+      <Skeleton className="h-48 rounded-tr-3xl" />
       <div className="p-4">
-        <Skeleton className="h-4 w-24 bg-gray-500 mb-2" />
-        <Skeleton className="h-4 w-20 bg-gray-500" />
-        <Skeleton className="h-8 w-24 bg-gray-500 mt-4" />
+        <Skeleton className="h-4 w-24 mb-2" />
+        <Skeleton className="h-4 w-20" />
+        <Skeleton className="h-8 w-24 mt-4" />
       </div>
     </div>
   );
