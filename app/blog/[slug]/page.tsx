@@ -1,3 +1,4 @@
+import CommentSection from "@/components/CommentSection";
 import { prisma } from "@/lib/prisma";
 import { getReadableDate } from "@/lib/utils";
 import Markdown from "react-markdown";
@@ -46,6 +47,11 @@ export default async function BlogPost({ params }: Props) {
           >
             {blog.content}
           </Markdown>
+        </div>
+        <div>
+          <hr className="border-gray-300 my-4" />
+          <h2 className="text-xl font-bold">Comments</h2>
+          <CommentSection params={params} />
         </div>
       </div>
     </article>
