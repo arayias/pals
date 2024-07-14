@@ -1,6 +1,7 @@
 import { getReadableDate } from "@/lib/utils";
 import type { Comment } from "@prisma/client";
 import Link from "next/link";
+import { Skeleton } from "./ui/skeleton";
 
 type Props = {
   comment: Comment;
@@ -9,6 +10,18 @@ type Props = {
     image: string | null;
   };
 };
+
+export function LoadingCommentCard() {
+  return (
+    <div className="flex flex-row gap-1">
+      <Skeleton className="h-[32px] w-[32px] rounded-full animate-pulse" />
+      <Skeleton className="flex-1 flex flex-col gap-0.5">
+        <Skeleton className="animate-pulse h-4 w-full" />
+        <Skeleton className="animate-pulse h-4 w-full" />
+      </Skeleton>
+    </div>
+  );
+}
 
 export default function CommentCard({ comment, author }: Props) {
   return (
@@ -21,7 +34,10 @@ export default function CommentCard({ comment, author }: Props) {
         />
       </div>
       <div className="flex-1 flex flex-col gap-0.5">
-        <Link href={`/user/${author.name}`} className="text-sm font-medium">
+        <Link
+          href={`/user/${comment.authorId}`}
+          className="text-sm font-medium"
+        >
           {author.name}
         </Link>
         <div className="text-sm text-gray-300">{comment.content}</div>

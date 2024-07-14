@@ -30,7 +30,7 @@ export default function BlogCard({ params }: Props) {
               )}
             </div>
           </Link>
-          <div className="flex flex-col text-base sm:text-sm md:text-sm lg:text-xl ">
+          <div className="flex flex-col text-xs sm:text-sm md:text-sm lg:text-xl ">
             <span className="font-semibold">{params.author.name}</span>
             <span> {getReadableDate(params.createdAt)}</span>
           </div>

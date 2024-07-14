@@ -22,7 +22,11 @@ export default async function User({ params }: Props) {
     take: 7,
   });
 
-  const { name, bio, image } = user || {};
+  if (!user) {
+    return <div>User not found</div>;
+  }
+
+  const { name, bio, image } = user;
 
   return (
     <div className="grid grid-cols-1 gap-5 p-4 max-h-screen md:grid-cols-2">

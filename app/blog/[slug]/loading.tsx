@@ -1,3 +1,4 @@
+import { LoadingCommentCard } from "@/components/CommentCard";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Loading() {
@@ -26,6 +27,13 @@ export default function Loading() {
               <Skeleton className="h-10 w-full" />
               <Skeleton className="h-10 w-[80%]" />
             </div>
+          </div>
+          <hr className="border-gray-300 my-4" />
+          <h2 className="text-xl font-bold">Comments</h2>
+          <div className="flex flex-col gap-4">
+            {Array.from({ length: 3 }).map((_, i) => (
+              <LoadingCommentCard key={i} />
+            ))}
           </div>
         </div>
       </article>
