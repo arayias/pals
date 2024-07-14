@@ -1,8 +1,12 @@
 import UserCard from "@/components/UserCard";
-import { prisma } from "@/lib/prisma";
+import { getUsers } from "./actions";
 
-export default async function Users() {
-  const users = await prisma.user.findMany();
+type Props = {
+  page: number;
+};
+
+export async function UserSection({ page }: Props) {
+  const users = await getUsers(page, 12);
 
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 content-evenly place-items-center">
@@ -10,5 +14,13 @@ export default async function Users() {
         <UserCard key={user.id} {...user} />
       ))}
     </div>
+  );
+}
+
+export default async function Users() {
+  return (
+    <>
+      <UserSection page={0} />
+    </>
   );
 }

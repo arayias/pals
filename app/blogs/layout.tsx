@@ -15,7 +15,9 @@ export default async function BlogLayout({
         <Button className="mb-2">Create Blog</Button>
       </Link>
       {children}
-      <Paginate params={{ totalPages: Math.ceil(blogCount / 12) }} />
+      <Paginate
+        params={{ totalPages: Math.ceil(blogCount / 12), baseUrl: "/blogs" }}
+      />
     </>
   );
 }

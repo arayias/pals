@@ -13,6 +13,7 @@ import { useParams } from "next/navigation";
 type Props = {
   params: {
     totalPages: number;
+    baseUrl?: string;
   };
 };
 
@@ -25,7 +26,9 @@ export default function Paginate({ params }: Props) {
       <PaginationContent className="bg-slate-700 rounded-xl">
         {currentPage > 0 && (
           <PaginationItem>
-            <PaginationPrevious href={`/blogs/page/${currentPage - 1}`} />
+            <PaginationPrevious
+              href={`${params.baseUrl}/page/${currentPage - 1}`}
+            />
           </PaginationItem>
         )}
         <PaginationItem>
@@ -33,7 +36,9 @@ export default function Paginate({ params }: Props) {
         </PaginationItem>
         {params.totalPages - 1 > currentPage && (
           <PaginationItem>
-            <PaginationNext href={`/blogs/page/${currentPage + 1}`} />
+            <PaginationNext
+              href={`${params.baseUrl}/page/${currentPage + 1}`}
+            />
           </PaginationItem>
         )}
       </PaginationContent>
