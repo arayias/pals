@@ -18,6 +18,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { serverRevalidatePath } from "@/app/actions";
 import { postComment } from "@/app/blog/[slug]/actions";
 import { useSession } from "next-auth/react";
+import Warn from "./Warn";
 
 const formSchema = z.object({
   content: z.string().min(10).max(1000),
@@ -45,7 +46,7 @@ export default function CommentForm({ blogId }: Props) {
   }
 
   if (!session.data?.user?.id) {
-    return <div>You must be logged in to post a comment</div>;
+    return <Warn>You must be logged in to post a comment</Warn>;
   }
 
   return (

@@ -69,7 +69,7 @@ export default function BlogForm({ params }: BlogFormProps) {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 dark">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormField
           control={form.control}
           name="title"
@@ -98,11 +98,7 @@ export default function BlogForm({ params }: BlogFormProps) {
             </FormItem>
           )}
         />
-        <Button
-          variant={"secondary"}
-          className="hover:bg-green-400"
-          type="submit"
-        >
+        <Button className="hover:bg-green-400 dark" type="submit">
           {params?.id ? "Update" : "Post"}
         </Button>
       </form>

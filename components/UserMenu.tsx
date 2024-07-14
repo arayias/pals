@@ -69,11 +69,7 @@ export function UserMenu() {
   }
 
   return (
-    <Button
-      className="dark px-1 py-0.5"
-      variant={"outline"}
-      onClick={() => signIn()}
-    >
+    <Button variant={"secondary"} className="p-2" onClick={() => signIn()}>
       Sign in
     </Button>
   );
