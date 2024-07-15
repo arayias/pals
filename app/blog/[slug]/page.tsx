@@ -1,8 +1,10 @@
 import CommentSection from "@/components/CommentSection";
 import { Button } from "@/components/ui/button";
+import { TooltipContent } from "@/components/ui/tooltip";
 import { authOptions } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { getReadableDate } from "@/lib/utils";
+import { Tooltip, TooltipTrigger } from "@radix-ui/react-tooltip";
 import { Edit } from "lucide-react";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
@@ -45,11 +47,16 @@ export default async function BlogPost({ params }: Props) {
         <div className="dark:text-gray-400 text-gray-700 flex gap-2 items-center justify-center">
           {blog.author.name} {"\u2022"} {getReadableDate(blog.createdAt)}
           {session?.user?.id === blog.author.id && (
-            <Link href={`/blog/${params.slug}/edit`}>
-              <Button className="hover:bg-green-400 dark">
-                <Edit />
-              </Button>
-            </Link>
+            <Tooltip>
+              <TooltipTrigger>
+                <Link href={`/blog/${params.slug}/edit`}>
+                  <Edit className="hover:text-green-400" />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Edit this blog</p>
+              </TooltipContent>
+            </Tooltip>
           )}
         </div>
       </div>
