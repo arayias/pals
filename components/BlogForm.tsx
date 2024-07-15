@@ -89,11 +89,11 @@ export default function BlogForm({ params }: BlogFormProps) {
           name="content"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Bio</FormLabel>
+              <FormLabel>Blog</FormLabel>
               <FormControl>
                 <Textarea {...field} />
               </FormControl>
-              <FormDescription>Your blog</FormDescription>
+              <FormDescription>Your blog (markdown)</FormDescription>
               <FormMessage />
             </FormItem>
           )}
